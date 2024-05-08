@@ -17,4 +17,4 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Run Selenium test
-        run: mvn -B -Dtest=FilmUIMultiBrowserTest test
+        run: mvn -B -Dtest=FilmUITest test
