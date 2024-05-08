@@ -28,7 +28,7 @@ public class FilmUITest {
     @BeforeEach
     public void setup() {
         this.driver = new SafariDriver();
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
 	@AfterEach
@@ -54,6 +54,8 @@ public class FilmUITest {
 
         // Hacemos click en "New film"
         driver.findElement(By.xpath("//*[text()='New film']")).click();
+
+        this.wait.until(ExpectedConditions.presenceOfElementLocated(By.name("title")));
         // Rellenamos el formulario
         driver.findElement(By.name("title")).sendKeys(title);
         driver.findElement(By.name("url")).sendKeys(url);
